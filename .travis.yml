@@ -1,0 +1,5 @@
+language: ruby
+before_script:
+  - RAILS_ENV=test bin/rails test db:create db:schema:load
+script:
+  - bin/rails test
