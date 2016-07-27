@@ -1,6 +1,9 @@
 language: ruby
 before_script:
   - RAILS_ENV=test bin/rails db:create db:schema:load
+  - node --version
+  - npm --version
+  - npm install
 script:
   - travis/test_runner.rb
 addons:
