@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "name": "codeclimate-coverages",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "mocha -r frontend/test/test_helper.js frontend/test",
+    "cover": "nyc --reporter=lcov --reporter=text npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryym/codeclimate-coverages.git"
+  },
+  "devDependencies": {
+    "babel-core": "^6.11.4",
+    "babel-plugin-istanbul": "^1.0.3",
+    "codeclimate-test-reporter": "^0.3.3",
+    "mocha": "^2.5.3",
+    "nyc": "^7.1.0"
+  },
+  "nyc": {
+    "sourceMap": false,
+    "instrument": false,
+    "exclude": [
+      "**/*-test.js"
+    ]
+  }
+}
