@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "scripts": {
     "test": "mocha -r frontend/test/test_helper.js frontend/test",
-    "cover": "nyc --reporter=lcov --reporter=text npm test"
+    "cover": "nyc --reporter=lcov --reporter=text npm test",
+    "send-coverages": "lcov-result-merger '*coverage/**/*.{info,lcov}' | codeclimate-test-reporter"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "instrument": false,
     "exclude": [
       "**/*-test.js"
-    ]
+    ],
+    "report-dir": "./nyc-coverage"
   }
 }

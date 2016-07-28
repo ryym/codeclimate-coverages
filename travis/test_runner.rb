@@ -6,17 +6,18 @@ require "English"
 # TestRunner
 class TestRunner
   def execute
-    system "mkdir lcovs"
+    # system "mkdir lcovs"
 
     system "COVERAGE=1 bin/rails test"
-    system "mv coverage/lcov/codeclimate-coverages.lcov lcovs/ruby.lcov"
+    # system "mv coverage/lcov/codeclimate-coverages.lcov lcovs/ruby.lcov"
 
     system "npm run cover"
-    system "mv coverage/lcov.info lcovs/js.lcov"
+    # system "mv coverage/lcov.info lcovs/js.lcov"
 
-    system "$(npm bin)/lcov-result-merger 'lcovs/*' > all.lcov"
-    system "cat all.lcov"
-    system "$(npm bin)/codeclimate-test-reporter < all.lcov"
+    system "npm run send-coverages"
+    # system "$(npm bin)/lcov-result-merger 'lcovs/*' > all.lcov"
+    # system "cat all.lcov"
+    # system "$(npm bin)/codeclimate-test-reporter < all.lcov"
   end
 end
 
