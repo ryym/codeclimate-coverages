@@ -3,13 +3,19 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 
 if ENV["COVERAGE"]
-  require "simplecov"
+  require 'simplecov'
+  require 'simplecov-lcov'
+
+  SimpleCov::Formatter::LcovFormatter.report_with_single_file = true
+  SimpleCov.formatter = SimpleCov::Formatter::LcovFormatter
+
   SimpleCov.start "rails" do
     add_filter "/test/"
     add_filter "/vendor/"
   end
-  require "codeclimate-test-reporter"
-  CodeClimate::TestReporter.start
+
+  # require "codeclimate-test-reporter"
+  # CodeClimate::TestReporter.start
 end
 
 class ActiveSupport::TestCase

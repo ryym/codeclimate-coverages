@@ -14,6 +14,7 @@
     "babel-core": "^6.11.4",
     "babel-plugin-istanbul": "^1.0.3",
     "codeclimate-test-reporter": "^0.3.3",
+    "lcov-result-merger": "^1.2.0",
     "mocha": "^2.5.3",
     "nyc": "^7.1.0"
   },

@@ -3,9 +3,13 @@ before_script:
   - RAILS_ENV=test bin/rails db:create db:schema:load
   - node --version
   - npm --version
-  - npm install
+  - npm install --no-progress
 script:
   - travis/test_runner.rb
+  # - echo ok
+# after_script:
+#   - cat test.lcov
+#   - $(npm bin)/codeclimate-test-reporter < test.lcov
 addons:
   code_climate:
     repo_token: 9a63f9f520b9847ca0ac90c94996618520325c8847986394e9b3f13bbd57b227
